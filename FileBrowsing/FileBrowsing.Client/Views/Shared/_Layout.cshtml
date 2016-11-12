@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/core/modernizr-2.6.2.js"></script>
+
+    <script src="~/scripts/core/angular.min.js"></script>
+    <script src="~/scripts/custom/app.js"></script>
+    <script src="~/scripts/custom/ngLoader.js"></script>
+
+    <script src="~/scripts/custom/Repositories/fileBrowsingRepositories.js"></script>
+    <script src="~/scripts/custom/Controllers/fileBrowsingController.js"></script>
+</head>
+<body>
+    <div class="container body-content" ng-app="myApp">
+        @RenderBody()
+    </div>
+
+    <script src="~/Scripts/core/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/core/bootstrap.min.js"></script>
+
+</body>
+</html>

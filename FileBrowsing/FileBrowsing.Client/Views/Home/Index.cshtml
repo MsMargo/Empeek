@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "File Browsing";
+}
+
+<div ng-controller="fileBrowsingController as browsingCtrl" ng-init="initialize()">
+    <table class="table" id="table">
+        <thead id="thead">
+            <tr>
+                <th>Less 10Mb</th>
+                <th>10Mb-50Mb</th>
+                <th>More 100Mb</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{currentCatalog.smallFileCounter}}</td>
+                <td>{{currentCatalog.mediumFileCounter}}</td>
+                <td>{{currentCatalog.largeFileCounter}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <label>Current path:</label> <span id="path">{{currentCatalog.pathModel.currentPath}}</span>
+
+    <div id="content" class="loader-container">
+        <div loader working="isProcessing"></div>
+        <div ng-hide="isRoot" class="padding">
+            <a ng-click="levelUp()"><img class="icon" src="~/Assets/key_enter.ico" />..</a><br />
+        </div>
+
+        <div>
+            <div ng-repeat="directory in currentCatalog.directories" class="padding">
+                <a ng-click="initilizeFilesAndDirectoryForPath(directory.directoryName)">
+                    <img class="icon" src="~/Assets/Folder.ico" />{{directory.directoryName}}
+                </a>
+            </div>
+
+            <br />
+        </div>
+
+        <div>
+            <div ng-repeat="file in currentCatalog.files" class="padding">
+                <a><img class="icon" src="~/Assets/file.ico" />{{file.fileName}}</a>
+            </div>
+        </div>
+    </div>
+
+</div>
